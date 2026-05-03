@@ -1,0 +1,4 @@
+Option #1: 日本
+Option #2: 韓國
+Option #3: 泰國
+Option #4: 印尼
