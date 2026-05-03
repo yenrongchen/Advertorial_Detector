@@ -33,7 +33,7 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
         # 萃取需要的欄位
         item = {
             "id": str(id),
-            "article_id": str(article_id),
+            "articleId": str(article_id),
             "title": post.get("title"),
             "edited": int(post.get("edited", False)),
             "commentCount": int(post.get("commentCount")),
