@@ -9,7 +9,7 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
         with open(input_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except Exception as e:
-        print(f"Error reading {input_file}: {e}")
+        print(f"Error: {e}")
         return
 
     cleaned_data = []
@@ -17,8 +17,8 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
     os.makedirs(article_dir, exist_ok=True)  # 確保資料夾存在
     article_id = 1
     id_mapping = {}  # 追蹤 Dcard 文章的原始 id 與 article_id 的對應關係
-
-    print(f"Processing {len(data)} posts...")
+    
+    print(f"處理 {len(data)} 篇文章中...")
 
     for post in data:
         id = post.get("id")
@@ -49,11 +49,11 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
 
         # 處理內文
         true_content = ""
-        url_pattern = re.compile(r'^https?://[^\s]+$')
+        url_pattern = re.compile(r'^(https?://[^\s]+)(\s+https?://[^\s]+)*$')
         content_raw = post.get("content")
         if url_pattern.match(content_raw.strip()):
             meta = post.get("meta", {})
-            if "annotation" in meta:
+            if "annotation" in meta and meta["annotation"].strip():
                 true_content = meta["annotation"].strip()
                 item["content"] = true_content
             else:
@@ -100,6 +100,7 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
         cleaned_data.append(item)
 
         with open(f"{article_dir}/{article_id}.txt", "w", encoding="utf-8") as f:
+            f.write(f"標題：{post.get('title')}\n\n")
             f.write(true_content)
 
         id_mapping[id] = article_id
@@ -118,12 +119,11 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
             with open(mapping_file, 'w', encoding='utf-8') as f:
                 json.dump(id_mapping, f, ensure_ascii=False, indent=2)
             
-            print(f"Successfully cleaned {len(cleaned_data)} posts and saved to {output_file}")
-            print(f"Content files saved in '{article_dir}/' folder.")
+            print(f"成功清理 {len(cleaned_data)} 篇文章，並存進 '{article_dir}/' 資料夾中。")
         except Exception as e:
-            print(f"Error writing CSV: {e}")
+            print(f"Error: {e}")
     else:
-        print("No data to save.")
+        print("沒有資料可以寫入")
 
 if __name__ == "__main__":
     clean_data(

@@ -1,12 +1,46 @@
-https://megapx.dcard.tw/v1/images/bcfa99f4-e674-4a0a-abb4-8406f1b60e80/encode/1280
-https://megapx.dcard.tw/v1/images/2a0fa20b-c182-439e-a244-1826453d2042/encode/1280
-https://megapx.dcard.tw/v1/images/14459047-a245-497b-a2e0-ebba8738968f/encode/1280
-https://megapx.dcard.tw/v1/images/34a1af28-9a90-4ec9-a708-a7d75b3d421f/encode/1280
-https://megapx.dcard.tw/v1/images/4660b437-d28e-4871-a802-5dc6328ef06d/encode/1280
-https://megapx.dcard.tw/v1/images/2be89dfe-cb37-49f8-939b-a17fc7256185/encode/1280
-https://megapx.dcard.tw/v1/images/94ffcac7-13c0-41ec-ac3d-c9d368929100/encode/1280
-https://megapx.dcard.tw/v1/images/5183acd7-0205-481e-af2a-990694a2ed16/encode/1280
-https://megapx.dcard.tw/v1/images/96f9bdca-c297-49cb-8cec-99588978497f/encode/1280
-https://megapx.dcard.tw/v1/images/82830561-9848-4289-bc00-29170535ddcd/encode/1280
+標題：#其他 #教學 我的手機可以用 eSIM 嗎？3 秒快速自我檢測！
 
-成功啤酒廠
+大家好！我是 Shan 👋
+
+最近出國 eSIM 已經是大家首選，不用換卡也不用怕卡針遺失
+但是還是看到很多人買了 eSIM，要安裝時才發現「手機不支援」，不只浪費錢，又要趕快在機場電信櫃檯買實體卡！
+為了不浪費大家時間，快速教大家怎麼「3秒自檢」，出國前先確認好這幾件事，真的能省下不少時間！
+
+
+📍 方法一：最準的 3 秒檢測法（看EID）
+不管手機品牌或型號，直接打開你的手機撥號介面：輸入「*#06#」
+如果畫面有跳出 「EID」 這一串條碼，那就代表你的手機是有支援 eSIM 的！
+如果沒出現，那只能選擇實體卡了🥺
+https://megapx-assets.dcard.tw/images/01fbafa4-3959-4b0c-aa9e-baed6965c250/orig.jpeg
+
+📍 方法二：檢查系統選單
+EID檢查後，要再保險的方式是去設定檢查：
+• iPhone：設定 ➡️ 行動服務 ➡️ 有沒有出現「加入 eSIM」或「加入行動方案」。
+• Android：設定 ➡️ 網路和網際網路 ➡️ SIM 卡 ➡️ 點擊「+」號看看有沒有「下載 eSIM」。
+https://megapx-assets.dcard.tw/images/147edc70-5aac-4752-b437-39386b00c2b1/orig.jpeg
+
+💡 小撇步：
+為什麼有些人說 eSIM 很難設定？
+跟著我設定只要 1 分鐘，但很多人失敗是因為「時機不對」！
+✅ 一定要有網路：掃描 QR Code 設定時，手機必須連著網路，建議在「登機前」先在機場設定完成，避免到當地沒有網路手忙腳亂的 🥺
+✅ 不要提早開啟：在出發當天或在機場再掃 QR Code，太早開啟會導致方案天數提早起算，到最後一天反而沒得用。
+
+
+👇 如果你還是不確定，或是怕掃失敗...
+只要購買 Klook 或是 KKday 指定的 eSIM 有一鍵安裝的功能，點選後立即安裝真的超方便！
+（如果不確定購買的類別有沒有這個功能，歡迎留言詢問我）
+
+
+🔗 如果你正準備買 eSIM，我把目前各家平台（KKday/Klook）最新的折扣碼彙整在這裡了，能省下的錢拿去多喝一杯咖啡吧 ☕️
+
+https://shannday.com.tw/kkday-discount/
+
+https://shannday.com.tw/klook-discount/
+
+
+大家有遇過買了 eSIM 結果不能用的慘況嗎？
+或是設定時遇到什麼奇怪的問題？
+歡迎在下面留言分享，我會盡量幫大家解答！👇
+
+
+#eSIM #旅遊攻略 #出國必備 #旅遊 #教學 #懶人包 #網卡

@@ -15,6 +15,7 @@
     └── ... (更多 txt 檔案)
 ```
 
+<br>
 
 ## CSV 欄位解釋
 
@@ -46,6 +47,7 @@
 
 #### 註：`edited`、`authorUseNickname`、`withImages`、`withVideos`、`authorHasCreatorBadge`、`authorHasOfficialCreatorBadge` 六個欄位原為布林值，CSV 檔中已被轉換為整數，1 代表 True，0 代表 False
 
+<br>
 
 ## 查看原始貼文方式
 
@@ -63,6 +65,7 @@
 * 根據 id_mapping.json，1.txt 對應到的文章原始 ID 是 261406898
 * 原始貼文的網址就會是 https://www.dcard.tw/f/travel/p/261406898
 
+<br>
 
 ## 爬蟲執行步驟
 
