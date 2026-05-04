@@ -8,7 +8,16 @@ FORUM = "travel"  # 要爬的看板名稱 (英文)
 OUTPUT_FILE = "dcard_name_raw.json"  # 文章輸出檔案名稱
 CRAWLED_IDS_FILE = "crawled_ids_name.txt"  # 記錄爬過的文章 ID
 SAVE_EVERY = 50  # 每爬 50 篇就存檔一次
-TARGET_AMOUNT = 3200  # 目標文章數量
+TARGET_AMOUNT = 3300  # 目標文章數量
+
+def get_start_post_id(crawled_ids):
+    if not crawled_ids:
+        return None
+    ids = sorted([int(i) for i in crawled_ids if i.isdigit()])
+    if not ids:
+        return None
+    idx = int(len(ids) * 0.01)  # 第 1 百分位數的 ID 作為起點
+    return ids[idx]
 
 def load_crawled_ids():
     try:
@@ -61,6 +70,7 @@ def fetch_post(page, post_id, max_retries=5):
 def main():
     crawled_ids = load_crawled_ids()
     all_posts = load_existing_posts()
+    start_id = get_start_post_id(crawled_ids)
     print(f"已存 {len(all_posts)} 篇，已爬過 {len(crawled_ids)} 個 ID")
     print(f"目標：{TARGET_AMOUNT} 篇\n")
 
@@ -79,8 +89,7 @@ def main():
                     params = parse_qs(urlparse(response.url).query)
                     captured["list_key"] = params.get("listKey", [None])[0]
                     captured["page_key"] = params.get("pageKey", [None])[0]
-                    print(f"攔到 listKey: {captured['list_key'][:20]}...")
-                    print(f"攔到 pageKey: {captured['page_key'][:20]}...")
+                    print("已攔到 keys")
 
         page.on("response", handle_response)
 
@@ -93,12 +102,13 @@ def main():
             return
 
         list_key = captured["list_key"]
-        page_key = captured["page_key"]
+        if start_id:
+            page_key = f"{list_key}_{start_id}"
+            print(f"使用 {start_id} 當作起點")
+        else: 
+            page_key = captured["page_key"]
 
-        # 用 offset 分頁爬
         new_since_save = 0
-
-        current_page_key = page_key
 
         try:
             while len(all_posts) < TARGET_AMOUNT:
@@ -108,7 +118,7 @@ def main():
                     async () => {{
                         const res = await fetch(
                             "/service/api/v2/globalPaging/page?enrich=true&platform=web&filterPolitical=false" +
-                            "&listKey={list_key}&country=TW&lang=zh-TW&pageKey={current_page_key}&offset=0",
+                            "&listKey={list_key}&country=TW&lang=zh-TW&pageKey={page_key}&offset=0",
                             {{
                                 headers: {{
                                     "accept": "*/*",
@@ -141,7 +151,12 @@ def main():
                             break
                         
                         list_key = captured["list_key"]
-                        current_page_key = captured["page_key"]  # 從頭開始
+                        start_id = get_start_post_id(crawled_ids)
+                        if start_id:
+                            page_key = f"{list_key}_{start_id}"
+                            print(f"使用 {start_id} 當作起點")
+                        else: 
+                            page_key = captured["page_key"]
                         print(f"重新取得 keys，繼續爬...")
                         continue
                     else:
@@ -162,11 +177,18 @@ def main():
                                 print(f"  已爬過 {post_id}，跳過")
                                 continue
 
+                            time.sleep(random.uniform(1, 3))
+
                             detail = fetch_post(page, post_id)
                             if detail.get("error"):
                                 continue
 
                             crawled_ids.add(post_id)
+
+                            # 檢查 forum
+                            if detail.get("forumAlias") != FORUM:
+                                print(f"  跳過論壇錯誤的文章: {post_id}")
+                                continue
                             
                             # 跳過匿名發布的文章
                             if not detail.get("withNickname", False):
@@ -179,7 +201,7 @@ def main():
 
                             # 跳過互動性過低的文章
                             # 2001 ~ 2583 設定：留言數 < 15 且按讚數 < 30 就跳過
-                            if detail.get("totalCommentCount", 0) < 20 and detail.get("likeCount", 0) < 50:
+                            if detail.get("totalCommentCount", 0) < 20 and detail.get("likeCount", 0) < 40:
                                 print(f"  跳過互動性過低的文章: {post_id}")
                                 continue
 
@@ -194,8 +216,6 @@ def main():
                             if len(all_posts) >= TARGET_AMOUNT:
                                 break
 
-                            time.sleep(random.uniform(1, 2))
-
                 # 用 nextKey 翻頁
                 next_key = result.get("nextKey")
 
@@ -203,8 +223,8 @@ def main():
                     print("沒有下一頁，結束")
                     break
 
-                current_page_key = next_key
-                time.sleep(random.uniform(1, 2))
+                page_key = next_key
+                time.sleep(random.uniform(3, 4))
 
         except KeyboardInterrupt:
             print("\n手動中斷")
