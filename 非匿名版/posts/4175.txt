@@ -1,0 +1,59 @@
+標題：#其他 一個LINE翻譯AI，可以翻譯100多種語言
+
+範例：
+https://megapx-assets.dcard.tw/images/863cfc92-5b11-42c7-9cfb-6b97b18eba40/orig.jpeg
+
+https://megapx-assets.dcard.tw/images/81fa9491-1c4f-4f03-be0d-f4b1d13ecd8d/orig.jpeg
+
+免費版本最多同時翻譯三種語言（付費可解鎖更多）
+
+https://megapx-assets.dcard.tw/images/c3ded204-d194-4782-bcf3-2af1a541cd23/orig.jpeg
+
+我通常會創一個有我、外國人、機器人的群組，這樣子我寫中文就會翻譯成對方的語言，然後對方也可以設定，他寫他的語言會翻譯成中文
+https://megapx-assets.dcard.tw/images/5c664ea9-2e6c-4770-a9ee-48d9343a4fc0/orig.jpeg
+
+如果你的外國朋友不知道怎麼設定，你可以用你的手機幫他設定
+
+在對話框中輸入以下代碼
+
+（印尼文要求設定語言許可）
+^asking permission. ~id
+
+（越南文要求設定語言許可）
+^asking permission. ~vi
+
+（英文要求設定語言許可）
+^asking permission. ~en
+
+（我就只有存這三種語言的代碼，其他語言你們在設定裡面找找吧）
+
+然後會出現如下的畫面
+https://megapx-assets.dcard.tw/images/0e52a35b-df27-43ab-9ec0-32fa273f682d/orig.jpeg
+你要叫對方點擊那個綠色框框，代表允許你代替他設定語言
+
+之後再輸入一下代碼（開始替朋友設定語言）
+LANGUAGE SETUP
+
+（你也可以創一個只有你跟機器人的群組，這樣他就是你的專屬翻譯工具）
+
+使用方法
+https://youtu.be/IDT4OMV2T8E
+
+
+https://line.me/R/ti/p/@330yloti
+
+https://www.ligobot.com/
+
+https://megapx-assets.dcard.tw/images/4f408652-8880-440d-bf78-db899017d826/orig.jpeg
+
+我查過了，這間是泰國的公司
+
+https://megapx-assets.dcard.tw/images/b0c2366b-3e17-4abb-996e-b3f07d80e944/orig.jpeg
+
+使用是免費的
+
+https://megapx-assets.dcard.tw/images/302940d9-ab24-4b59-8e14-4318b2169ebb/orig.jpeg
+
+每天會有翻譯字數的額度，如果達到上限的話他會提示你，我通常是點看廣告，然後等30秒就會有新的額度了（其實也沒有廣告，就是等30秒倒數）
+
+我之前覺得每次都要等30秒很麻煩，我有付費買過他的服務，90天150泰銖，刷信用卡

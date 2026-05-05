@@ -69,13 +69,12 @@
 
 ## 爬蟲執行步驟
 
-1. 關閉所有 Chrome
-2. 終端機輸入 
+1. 終端機輸入 
    ```bash
    "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\chrome-debug"
    ```
-3. 在自動開啟的瀏覽器進入 Dcard，登入 (如果未登入)，再前往旅遊板 (或任意想爬的板)
-4. 執行
+2. 在自動開啟的瀏覽器進入 Dcard，登入 (如果未登入)，再前往旅遊板 (或任意想爬的板)
+3. 執行
    ```
    python crawl.py
    ```
