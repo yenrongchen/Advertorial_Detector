@@ -1,0 +1,20 @@
+標題：#國外遊記 中國VPN 翻牆完全攻略
+
+漫遊花費真的太貴了還是需要花費大量網路，網路上不知道如何挑選翻牆軟體，直接以親身經驗教大家。
+
+因為免費的VPN都不太穩定，因此推薦大家需要付費的，首先先在台下載好 Shadowrockt，一次買斷 台幣90塊。
+https://megapx-assets.dcard.tw/images/8bb6a1aa-2ceb-49f8-97a6-6dd1aeecfb98/orig.webp
+再來到網路上購買流量
+https://dog10.ssrdog10.com/#/signin
+先註冊帳號
+https://megapx-assets.dcard.tw/images/a825962a-faee-42fa-92e3-058c3d99e11f/orig.png
+ 接著再購買你需要的方案，一個月150GB就很夠用了，我選的方案是一個月25塊人民幣，一次可以支援三個裝置。
+
+https://megapx-assets.dcard.tw/images/8dda8b43-c9bf-4699-b4cd-e494357ebe1f/orig.png
+可以使用支付寶或是維信支付
+https://megapx-assets.dcard.tw/images/55600ef3-568f-47ba-9b8b-e0db5f942bd7/orig.png
+購買完成後可以到用戶中心，然後按一鍵導入到Shadowrockt，就會導入APP就可以使用拉
+https://megapx-assets.dcard.tw/images/d6d2f6af-72db-4cfa-8c31-ce55b74ffeab/orig.png
+https://megapx-assets.dcard.tw/images/310727fa-6aa0-40e5-ad41-67e66e924eff/orig.png
+連上中國當地的wifi再開啟Shadowrockt，就可以使用了
+有任何問題歡迎大家留言

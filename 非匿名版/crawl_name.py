@@ -8,7 +8,7 @@ FORUM = "travel"  # 要爬的看板名稱 (英文)
 OUTPUT_FILE = "dcard_name_raw.json"  # 文章輸出檔案名稱
 CRAWLED_IDS_FILE = "crawled_ids_name.txt"  # 記錄爬過的文章 ID
 SAVE_EVERY = 50  # 每爬 50 篇就存檔一次
-TARGET_AMOUNT = 3300  # 目標文章數量
+TARGET_AMOUNT = 3600  # 目標文章數量
 
 def get_start_post_id(crawled_ids):
     if not crawled_ids:
@@ -201,7 +201,7 @@ def main():
 
                             # 跳過互動性過低的文章
                             # 2001 ~ 2583 設定：留言數 < 15 且按讚數 < 30 就跳過
-                            if detail.get("totalCommentCount", 0) < 20 and detail.get("likeCount", 0) < 40:
+                            if detail.get("totalCommentCount", 0) < 10 and detail.get("likeCount", 0) < 20:
                                 print(f"  跳過互動性過低的文章: {post_id}")
                                 continue
 
