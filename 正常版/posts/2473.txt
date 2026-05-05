@@ -1,0 +1,236 @@
+標題：#其他 阿提哈德航空成功申請簽證心得｜中英對照詳細紀錄/付款失敗做法/阿布達比中停STOPOVER/UAE過境簽證2025
+
+阿提哈德近期開航阿布達比及台北航線，台灣前往歐洲又多了新的選擇～阿提哈德航空又提供免費的中停STOPOVER飯店，訂好機票飯店後，下一步就是申請UAE的過境簽證transit Visa，剛順利申請完，有些小地方要注意，紀錄下來跟旅人們分享！
+
+➡️還沒要出發？也可以先存起來備用～
+https://megapx-assets.dcard.tw/images/0163ccfe-0078-4942-83b2-95baff377220/orig.jpeg
+
+🔎瀏覽器搜尋 「阿提哈德 簽證」或從官網進入
+https://etihad.visaonline.ae/etihad/public-services/BRK_ETIHAD_VISA
+
+https://megapx-assets.dcard.tw/images/7dcb6c57-9b72-4a8d-ac7d-705bc734b828/orig.jpeg
+注意：
+1.抵達日前一個月才能申請
+⭐⭐⭐2.提前準備好資料
+(1)護照彩色電子檔
+(2)白底證件照電子檔
+(3)阿提哈德電子機票電子檔
+(4)母親名子拼音(阿拉伯國家很多會用這個做資料比對)
+(5)居住地及飯店英文地址
+(6)VPN設定-可跳轉至日本、新加坡等國家
+
+
+https://megapx-assets.dcard.tw/images/97fdaed6-31f0-4245-857b-341084bc99d4/orig.jpeg
+依照停留時間長短分為兩個方案
+🔘2天的：Issue Transit Visa (48 Hours) 55 AED(不含稅)
+🔘4天的：Issue Transit Visa (96 Hours) 216 AED(不含稅)
+
+
+https://megapx-assets.dcard.tw/images/ae4c9d93-9ce0-4a5e-bcc5-1d8c52dbc060/orig.jpeg
+主要有五個步驟：
+A. General Information 填寫資料-又有4部分要填
+B. Attachments 上傳附件
+C. Review 檢視資料
+D. Payment 付款
+E. 收信、下載簽證
+
+以下就圖文對照：
+
+----------A. General Information 填寫資料----------
+
+https://megapx-assets.dcard.tw/images/f7ddba67-8ef1-44f3-a9fb-51fc4d5520a0/orig.jpeg
+A1. Trip Details 旅行細節
+
+🔘Emirate* 酋長國　Abu Dhabi | 1 (免填，系統自動帶入)
+
+🔘Transit Port* 中轉港　Zayed International Airport | 4 (免填，系統自動帶入)
+
+🔘Coming From* 來自國家　我從巴塞隆納啟程所以填Spain | 122
+
+🔘Booking Reference Number 訂位代號　填當初訂機票的訂位代號
+
+🔘Arrival Date*入境日期　🔘Arrival Time*入境時間
+
+🔘Departure Date*離境日期　🔘Departure Time*離境時間
+
+🔘Do you have a third travel destination?*有無第三個旅遊地　請選Yes，因為這個頁面就是針對中停Stopover的旅客可以申請的
+
+
+https://megapx-assets.dcard.tw/images/6541fe74-4f26-4d62-b284-2fb4c358c0e2/orig.jpeg
+A2. Applicant Information申請資料
+*細項比較多耐心填寫，數了數有24項
+1.Full English Name* 英文全名 我填名+空白+姓，也無法輸入標點符號-,，如:AMY WANG
+
+2.Full Arabic Name* 阿拉伯全名(免填，系統自動翻譯)
+
+3.Nationality*國籍 填護照的，如: Taiwan | 206
+
+4.Date Of Birth*生日 依照日月年選DD/MM/YYYY
+
+5.Birth Country*出生地 填護照的，如: Taiwan | 206
+
+6.Birth Place English*英文出生地 填護照的，如: TAIWAN
+
+7.Birth Place Arabic*阿拉伯語出生地(免填，系統自動翻譯)
+
+8.Mother’s First Name (English)*母親英文名，系統提示:Please Enter A Name From One Syllable只要輸入名字，不要輸入母親的全名或姓氏
+
+9.Mother’s First Name (Arabic)* 母親阿拉伯名(免填，系統自動翻譯)
+
+10.Education Level*教育程度 如:Master | 6
+
+11.Profession*專業 系統提示:Enter At Least 3 Letters.至少輸入三個字後會有選項可以選，如:教育者可以輸入EDU就有很多選項可以選，選一個最符合即可
+
+
+https://megapx-assets.dcard.tw/images/e832187e-960e-424b-bcb3-c6bc141dc8b0/orig.jpeg
+12.Religion*宗教信仰 如:系統提示，如:Non Religious | 9無宗教
+
+13.Marital Status*婚姻狀態 如:Single | 1單身，或Married | 2已婚等
+
+⭐⭐⭐14.Email*電子郵件 填入連絡的信箱，一定不能填錯，會收不到信
+
+15.Gender*性別 選男Male或女Female
+
+16.Visit Reason*入境目的 如:Tourism觀光
+
+17.Passport Type*護照形式 選Ordinary Passport原始護照
+
+18.Passport Number*護照號碼 參閱護照
+
+19.Passport Issue Country*護照簽發國 如: Taiwan | 206
+
+20.Passport Issue Place (English)* 護照英文簽發地 如: TAIWAN
+
+21.Passport Issue Place (Arabic)* 護照阿拉伯文簽發地(免填，系統自動翻譯)
+
+22.Passport Issue Date* 護照簽發日期 依照日月年選DD/MM/YYYY
+
+23.Passport Expiry Date* 護照到期日 依照日月年選DD/MM/YYYY，系統提示:*Passport validity must be at least (6) months.護照效期需要大於六個月
+
+
+https://megapx-assets.dcard.tw/images/dc829bff-85ae-4afa-989a-45f9acaa392e/orig.jpeg
+A3. Addresses地址
+
+【Outside UAE阿聯酋境外】
+
+🔘Residency Country*居住國家 填Taiwan | 206
+
+🔘Residency Country Address*居住國家/地區地址* 填英文地址，只能有空白不能有標點符號(才能複製貼上)
+
+🔘Dilling Code*撥號代碼* 選886
+
+🔘Residency Country Telephone Number*居住國家電話號碼 輸入連絡電話
+
+【Inside UAE阿聯酋境內】
+
+🔘Inside UAE Emirate*住宿停留的酋長國 如:Abu Dhabi | 1
+
+🔘Inside UAE City*住宿停留的酋長國城市 如:Abu Dhabi | 1、Al Ain | 6、Al Dafra | 28
+
+🔘Inside UAE Address*阿聯酋境內地址* 填住宿地址，只能有空白不能有標點符號(才能複製貼上)
+
+🔘Do you have a UAE mobile number ?您有阿聯酋手機號碼嗎？ 填No無(會自動帶入居住地的聯絡電話)
+
+
+https://megapx-assets.dcard.tw/images/4c4900d9-f06b-42e2-a295-b7d917e7bcdc/orig.jpeg
+A4. Survey問卷
+
+🔘How much money do you intend to spend during your stay in the UAE?*您計劃在阿聯酋停留期間花多少錢？
+*系統提示:Amount (AED)，請填迪拉姆，1迪拉姆約等台幣8.3元(AEDTWD= 8.3)，如: 500
+
+🔘Have you ever been convicted of a misdemeanor or a felony?*您是否曾被判輕罪或重罪？* 填No無
+
+🔘Do you plan to seek employment during your visit?*您計劃在訪問期間尋找工作嗎？* 填No無
+
+
+
+---------B. Attachments 上傳附件----------
+*上傳後可編輯、裁切
+
+B1. Passport Requirements護照規定
+https://megapx-assets.dcard.tw/images/70fe7238-74e1-41b4-a17a-716143632fa7/orig.jpeg
+🔘The passport copy must be current and valid for at least 6 months at the time of submitting the request.提交申請時，護照副本必須仍在有效期內，且至少有效 6 個月。
+
+🔘The passport copy must be in color and scanned with quality.護照副本必須為彩色且掃描清晰。
+
+🔘The passport copy should be clear, legible, not damaged, and free from any folds, tears, smudges, or obstructions that may hinder the reading of the information.護照副本必須清楚可辨，無損壞，且不得有摺痕、破損、污漬或任何阻礙資訊閱讀的情況。
+
+🔘Make sure to provide a complete copy of the passport page that contains personal details, including your photograph, name, date of birth, passport number, and signature.請提供完整的護照個人資料頁副本，包含照片、姓名、出生日期、護照號碼與簽名。
+
+🔘The passport copy should not be tampered with or altered in any way. It should be an authentic representation of the original passport page.護照副本不得以任何方式竄改或修改，必須為護照原始頁面的真實呈現。
+
+
+B2.Personal Photo Requirements個人照片規定
+https://megapx-assets.dcard.tw/images/effb30d4-970b-4d19-bb23-def3c9d64a91/orig.jpeg
+🔘The photo must be in color.照片必須為彩色。
+
+🔘The background of the photo must be white.照片背景必須為白色。
+
+🔘Facial expressions should be neutral, and eyes open.表情應保持自然，雙眼睜開。
+
+🔘The applicant must be directly facing the camera with a full-face view.申請人必須正對鏡頭，完整呈現正面臉部。
+
+🔘The head in the photograph must occupy between 50% and 69% of the photo’s total height, with the head measuring between 1 inch and 1 3/8 inch (22 mm and 35 mm) from the bottom of the chin to the top of the head.頭部應佔照片總高度的 50% 至 69%，從下巴至頭頂高度應介於 22 公釐至 35 公釐（約 1 至 1 3/8 英吋）。
+
+🔘The photo must have been taken within the past six months to reflect the applicant's current appearance accurately.照片必須於近六個月內拍攝，以準確反映申請人當前外貌。
+
+🔘Hats or head coverings that obscure the hair or hairline are not permitted unless they are worn daily for religious purposes. In such cases, the entire face must be visible, and there must be no shadows on the face from the head covering.不得佩戴遮蔽頭髮或髮際的帽子或頭巾，除非因宗教原因每日佩戴。在此情況下，整張臉必須清晰可見，且頭飾不得在臉部投下陰影。
+
+🔘Glasses are generally not allowed in the picture, except in rare cases when they cannot be removed for medical reasons, and in any case they must not cover the eyes, or cause glare that obscures the eyes, or create shadows or refractions that obscure the eyes.一般情況下不得配戴眼鏡，僅在醫療原因無法取下時例外。但無論如何，眼鏡不得遮蓋眼睛、反光或產生陰影影響眼睛的清晰度。
+
+B3. 上傳附件-訂位機票
+
+🔘Confirmed ticket travelling into Abu Dhabi and onwards to a third destination.需提供確認訂位的機票，顯示先飛抵阿布達比，並繼續前往第三地的行程。
+
+
+
+----------C. Review 檢視資料----------
+https://megapx-assets.dcard.tw/images/eda20fa7-fcd0-483b-b4f6-7e9f639ef200/orig.jpeg
+https://megapx-assets.dcard.tw/images/72a1a55e-2ce1-464e-be80-1c2ee8e03a7c/orig.jpeg
+確認資料正確後，點下一步，這時候系統會自動存檔，可以到信箱點連結，重新開啟
+
+
+----------D. Payment 付款----------
+
+https://megapx-assets.dcard.tw/images/84267e50-2f17-4291-88a9-59636a12f8a6/orig.jpeg
+
+
+⚠️⚠️⚠️即使阿提哈德在2025/9/8開航台北，2025/9月底台灣網域仍會付款失敗，希望之後可改善
+https://megapx-assets.dcard.tw/images/d36c16ef-4e15-48f3-9ae5-ff3d9414059a/orig.jpeg
+
+*我的因應作法：
+
+1.手機打開已載好的VPN服務系統-連日本的網域，我用VPN cat-免費且順，有疑慮者可付費購買其他的VPN服務
+
+2.到信箱點開Visa draft簽證草稿，搜尋顯示簽證資料
+
+3.依序點到付款頁面，這時候就正常顯示，輸入卡號，僅接受MASTER萬事達跟VISA
+
+4.付款完成
+https://megapx-assets.dcard.tw/images/cc552e1e-a491-440b-adc4-dfe364d75eeb/orig.jpeg
+https://megapx-assets.dcard.tw/images/40d28648-1ba1-4618-b8f7-dc9f8abb6c3c/orig.jpeg
+https://megapx-assets.dcard.tw/images/1e9f0879-27cd-48bc-9ab0-71a7c20319ce/orig.jpeg
+
+
+----------E. 收信、下載簽證----------
+
+我在付款完後一個小時就收到簽證了！記得存好電子檔跟印出紙本～
+https://megapx-assets.dcard.tw/images/b582ade1-33e3-416e-a2e8-1b6c4a7447ba/orig.jpeg
+
+
+以上成功申請的心得分享給需要的旅人
+
+祝福大家在阿布達比STOPOVER順順利利！
+https://sticker-assets.dcard.tw/images/9de90ccf-c378-4948-aa14-e91550d3b2ab/full.png
+
+—————————
+
+寫下自己旅程筆記，以後可以回憶，順便給有需要的人參考
+
+🇬🇧英國 🇫🇮芬蘭 🇺🇸美國 🇨🇦加拿大 🇭🇰香港遊記持續更新中
+
+過去遊記可瀏覽器關鍵字+國家搜尋，如「客家千金 瑞士」，目前遊記涵蓋區域🇲🇴澳門 🇨🇭瑞士 🇰🇷韓國 🇯🇵日本 🇲🇾馬來西亞 🇻🇳越南 
+
+
+日常與即時旅遊動態在IG
+https://www.instagram.com/1dollar0818

@@ -4,7 +4,7 @@ import re
 import csv
 from datetime import datetime, timezone, timedelta
 
-def clean_data(article_dir, input_file, output_file, mapping_file):
+def clean_data(article_dir, input_file, output_file, mapping_file, target_forum="travel"):
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -26,7 +26,7 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
         if forum is None:
             print(f"找到一篇缺少論壇別的文章，ID: {id}")
             continue
-        elif forum != "travel":
+        elif forum != target_forum:
             print(f"找到一篇論壇錯誤的文章，ID: {id}, 論壇: {forum}")
             continue
 
@@ -49,11 +49,11 @@ def clean_data(article_dir, input_file, output_file, mapping_file):
 
         # 處理內文
         true_content = ""
-        url_pattern = re.compile(r'^https?://[^\s]+$')
+        url_pattern = re.compile(r'^(https?://[^\s]+)(\s+https?://[^\s]+)*$')
         content_raw = post.get("content")
         if url_pattern.match(content_raw.strip()):
             meta = post.get("meta", {})
-            if "annotation" in meta:
+            if "annotation" in meta and meta["annotation"].strip():
                 true_content = meta["annotation"].strip()
                 item["content"] = true_content
             else:

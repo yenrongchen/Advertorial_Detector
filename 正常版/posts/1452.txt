@@ -1,1 +1,18 @@
-正在計劃12月自己去大叻旅遊，想請教一下有去過的人有什麼需要注意，安全嗎？
+標題：#國外遊記 瑞士🇨🇭自助必看！STP vs 半價卡到底哪個划算？幫你精算的比價工具
+
+最近身邊一堆朋友準備夏天要來瑞士玩，每個人問我的問題都是：「欸，到底要買什麼票？怎麼這麼多種？ Swiss Travel Pass (STP) 還是半價卡比較划算？」。因此我直接寫了一個小工具幫大家計算車票錢。
+
+https://swisspro.tw/
+
+🔍 這個工具能幫你解決什麼？
+以前你要開一百個分頁、拉 Excel、對著 SBB 官網對照半天，現在你只需要輸入你的行程（包含少女峰、策馬特等熱門路線），系統會幫你跑三種方案：
+1️⃣ 直接買票 
+2️⃣ 半價卡 (含購卡成本) 
+3️⃣ STP
+❌️ 目前還沒有早鳥系列的票種，如  Saver Day Pass, Supersaver Ticket 
+
+⚠️ 如果你發現算出來怪怪的，或找不到你想去的路線，跪求大家留言回報給我，我會盡快「修 Bug」跟更新資料庫。我也會在 IG 分享一些在蘇黎世的省錢（生存）小撇步，大家可以去追蹤。
+
+https://www.instagram.com/swisspro.tw/
+https://megapx-assets.dcard.tw/images/041eea01-166d-43dd-b17b-073e07fb5bbe/orig.jpeg
+https://www.dcard.tw/v2/vivid/videos/0017ebf2-411a-48f8-bbc0-73849aaf909e?megapx=true&r=1.7777777777777777
