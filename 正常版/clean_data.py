@@ -43,7 +43,6 @@ def clean_data(article_dir, input_file, output_file, mapping_file, target_forum=
             "shareCount": int(post.get("shareCount")),
             "forumName": post.get("forumName"),
             "forumAlias": forum,
-            "linksCount": len(post.get("links", [])),
             "authorUseNickname": int(post.get("withNickname")),
         }
 
@@ -88,6 +87,30 @@ def clean_data(article_dir, input_file, output_file, mapping_file, target_forum=
         item["withVideos"] = 1 if len(unique_videos) > 0 else 0
         item["imageCount"] = len(unique_images)
         item["videoCount"] = len(unique_videos)
+
+        # 計算內文中的連結數量，排除 Dcard 內部圖片連結和 Imgur 圖片連結
+        link_count = 0
+        link_pattern = re.compile(r'https?://[^\s。，！？；：「」『』（）(),]+')
+        all_urls = link_pattern.findall(true_content)
+
+        extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
+        dcard_domains = [
+            'megapx-assets.dcard.tw',
+            'sticker-assets.dcard.tw',
+            'megapx.dcard.tw'
+        ]
+
+        for url in all_urls:
+            if any(domain in url for domain in dcard_domains):
+                continue
+            url_without_query = url.split('?')[0].lower()
+            if any(url_without_query.endswith(ext) for ext in extensions):
+                continue
+            if "i.imgur.com" in url:
+                continue
+            link_count += 1
+
+        item["linksCount"] = link_count
 
         # 擷取作者資訊
         author = post.get("author", {})
