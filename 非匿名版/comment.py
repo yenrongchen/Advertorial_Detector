@@ -1,13 +1,11 @@
-import re
 import json
 import time
 import random
 from playwright.sync_api import sync_playwright
 
-POST_FILE = "dcard_name_raw.json"
-OUTPUT_FILE = "comments.json"
-PROCESSED_IDS_FILE = "processed_comment_ids.txt"
-COMMENT_INFO_FILE = "comments_info.json"
+POST_FILE = "./raw_data/dcard_name_raw.json"
+OUTPUT_FILE = "./raw_data/comments.json"
+PROCESSED_IDS_FILE = "./record/processed_comment_ids.txt"
 SAVE_EVERY = 50
 
 def load_existing_comments():
@@ -24,67 +22,14 @@ def load_processed_ids():
     except FileNotFoundError:
         return set()
 
-def load_comment_info():
-    try:
-        with open(COMMENT_INFO_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
-
-def save_all(comments, processed_ids, comments_info):
+def save_all(comments, processed_ids):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(comments, f, ensure_ascii=False, indent=2)
 
     with open(PROCESSED_IDS_FILE, "w") as f:
         f.write("\n".join(processed_ids) + "\n")
-    
-    with open(COMMENT_INFO_FILE, "w", encoding="utf-8") as f:
-        json.dump(comments_info, f, ensure_ascii=False, indent=2)
 
     print(f"已儲存 {len(comments)} 篇文章的留言資訊")
-
-def count_link(content, author_reply_link_count):
-    if not content:
-        return author_reply_link_count
-        
-    url_pattern = re.compile(r'https?://[^\s。，！？；：「」『』（）(),]+')
-    all_urls = url_pattern.findall(content)
-
-    extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
-    dcard_domains = [
-        'megapx-assets.dcard.tw',
-        'sticker-assets.dcard.tw',
-        'megapx.dcard.tw'
-    ]
-
-    for url in all_urls:
-        if any(domain in url for domain in dcard_domains):
-            continue
-        if "i.imgur.com" in url:
-            continue
-        
-        url_without_query = url.split('?')[0].lower()
-        if any(url_without_query.endswith(ext) for ext in extensions):
-            continue
-            
-        author_reply_link_count += 1
-
-    return author_reply_link_count
-
-def get_author_info(author_name, author_uid, comment, author_reply_count, author_reply_link_count):
-    com_author_name = comment.get("author", {}).get("displayName")
-    com_author_uid = comment.get("author", {}).get("subtitle", None)
-
-    if com_author_uid is None:
-        if com_author_name == author_name:
-            author_reply_count += 1
-            author_reply_link_count = count_link(comment.get("content", ""), author_reply_link_count)
-    else:
-        if com_author_name == author_name and com_author_uid == author_uid:
-            author_reply_count += 1
-            author_reply_link_count = count_link(comment.get("content", ""), author_reply_link_count)
-
-    return author_reply_count, author_reply_link_count
 
 def fetch_comments(page, post_id, comment_type, comment_id="", after="", max_retries=10):
     # 抓取留言，支援分頁 (after 參數)、動態重試機制與 Playwright 例外捕捉
@@ -100,7 +45,6 @@ def fetch_comments(page, post_id, comment_type, comment_id="", after="", max_ret
 
     for retry in range(max_retries):
         try:
-            # 加入 try...except 防止瀏覽器當機或斷線導致腳本崩潰
             comments = page.evaluate(f"""
                 async () => {{
                     const res = await fetch("{fetch_url}", {{
@@ -143,7 +87,6 @@ def fetch_comments(page, post_id, comment_type, comment_id="", after="", max_ret
 def main():
     all_comments = load_existing_comments()
     processed_ids = load_processed_ids()
-    all_comments_info = load_comment_info()
 
     try:
         with open(POST_FILE, 'r', encoding='utf-8') as f:
@@ -170,16 +113,6 @@ def main():
                 if post_id in processed_ids:
                     print(f"已爬過 ID {post_id}，跳過")
                     continue
-                
-                author_name = post.get("author", {}).get("displayName")
-                author_uid = post.get("author", {}).get("subtitle")
-
-                # 統計數據初始化
-                sub_com_count = 0  # 子留言總數
-                author_reply_count = 0  # 作者回覆數量
-                author_reply_link_count = 0  # 作者回覆的連結數量
-                empty_dir_com = 0  # 空內容直接留言數量
-                empty_sub_com = 0  # 空內容子留言數量
                 
                 # 分頁變數
                 all_dir_comments = []
@@ -212,13 +145,7 @@ def main():
                             continue
                         
                         if com.get("content") is None:
-                            empty_dir_com += 1
                             continue
-                        
-                        # 計算作者回覆數量
-                        author_reply_count, author_reply_link_count = get_author_info(
-                            author_name, author_uid, com, author_reply_count, author_reply_link_count
-                        )
 
                         # 爬取子留言 (加入分頁 while 迴圈)
                         if com.get("subCommentCount", 0) > 0:
@@ -235,15 +162,6 @@ def main():
                                 if not isinstance(sub_comments, list) or len(sub_comments) == 0:
                                     break  # 子留言到底了
 
-                                for subcom in sub_comments:
-                                    if subcom.get("content") is None:
-                                        empty_sub_com += 1
-                                        continue
-
-                                    author_reply_count, author_reply_link_count = get_author_info(
-                                        author_name, author_uid, subcom, author_reply_count, author_reply_link_count
-                                    )
-
                                 all_sub_comments.extend(sub_comments)
                                 
                                 # 子留言翻頁判斷
@@ -253,7 +171,6 @@ def main():
                                     last_sub_id = sub_comments[-1].get("floor")
                                     time.sleep(random.uniform(1.0, 3.0))
 
-                            sub_com_count += len(all_sub_comments)
                             com["subComments"] = all_sub_comments
                             time.sleep(random.uniform(1.0, 2.0))
 
@@ -274,30 +191,19 @@ def main():
                 # 將該文章的所有留言統整存入
                 all_comments.append({post_id: all_dir_comments})
 
-                # 計算真正的留言總數
-                valid_dir_com_count = len(all_dir_comments) - empty_dir_com
-                valid_sub_com_count = sub_com_count - empty_sub_com
-                
-                all_comments_info.append({
-                    "id": post_id,
-                    "commentCount": valid_dir_com_count,
-                    "totalCommentCount": valid_dir_com_count + valid_sub_com_count,
-                    "authorReplyCount": author_reply_count,
-                    "authorReplyLinkCount": author_reply_link_count
-                })
-
-                print(f"完成 ID {post_id}，共抓取 {valid_dir_com_count} 則留言, {valid_sub_com_count} 則子留言")
+                print(f"完成 ID {post_id} 的文章")
                 processed_ids.add(post_id)
 
                 if len(processed_ids) % SAVE_EVERY == 0:
-                    save_all(all_comments, processed_ids, all_comments_info)
+                    save_all(all_comments, processed_ids)
 
                 time.sleep(random.uniform(1.0, 3.0))
 
         except KeyboardInterrupt:
             print("\n收到手動中斷指令")
+
         finally:
-            save_all(all_comments, processed_ids, all_comments_info)
+            save_all(all_comments, processed_ids)
 
 if __name__ == "__main__":
     main()

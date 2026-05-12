@@ -5,8 +5,8 @@ from playwright.sync_api import sync_playwright
 from urllib.parse import urlparse, parse_qs
 
 FORUM = "travel"  # 要爬的看板名稱 (英文)
-OUTPUT_FILE = "dcard_name_raw.json"  # 文章輸出檔案名稱
-CRAWLED_IDS_FILE = "crawled_ids_name.txt"  # 記錄爬過的文章 ID
+OUTPUT_FILE = "./raw_data/dcard_name_raw.json"  # 文章輸出檔案名稱
+CRAWLED_IDS_FILE = "./record/crawled_ids_name.txt"  # 記錄爬過的文章 ID
 SAVE_EVERY = 50  # 每爬 50 篇就存檔一次
 TARGET_AMOUNT = 5200  # 目標文章數量
 

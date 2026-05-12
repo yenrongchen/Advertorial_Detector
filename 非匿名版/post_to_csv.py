@@ -151,7 +151,7 @@ def clean_data(article_dir, input_file, output_file, mapping_file, target_forum=
 if __name__ == "__main__":
     clean_data(
         'posts', 
-        'dcard_name_raw.json', 
-        'dcard_name.csv', 
-        'id_mapping_name.json'
+        './raw_data/dcard_name_raw.json', 
+        './outputs/dcard_name.csv', 
+        './id_mapping_name.json'
     )

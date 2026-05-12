@@ -3,9 +3,9 @@ import time
 import random
 from playwright.sync_api import sync_playwright
 
-POST_FILE = "dcard_name_raw.json"
-OUTPUT_FILE = "author_posts.json"
-PROCESSED_UIDS_FILE = "processed_uids.txt"
+POST_FILE = "./raw_data/dcard_name_raw.json"
+OUTPUT_FILE = "./raw_data/author_posts.json"
+PROCESSED_UIDS_FILE = "./record/processed_uids.txt"
 SAVE_EVERY = 50
 
 def load_existing_data():
@@ -84,6 +84,7 @@ def select_post_info(post):
     cleaned["likeCount"] = post["likeCount"]
     cleaned["collectionCount"] = post["collectionCount"]
     cleaned["shareCount"] = post["shareCount"]
+    cleaned["createdAt"] = post["createdAt"]
     cleaned["personaNickname"] = post["personaNickname"]
     cleaned["personaUid"] = post["personaUid"]
     return cleaned
