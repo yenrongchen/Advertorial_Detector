@@ -2,7 +2,7 @@ import pandas as pd
 import time
 from playwright.sync_api import sync_playwright
 
-AMOUNT = 2000
+AMOUNT = 3000
 
 def fetch_post(page, post_id, max_retries=5):
     for _ in range(max_retries):
@@ -40,10 +40,7 @@ def main():
     data = data.sort_values("totalCommentCount", ascending=False)
 
     top = data[:AMOUNT]
-    sec = data[AMOUNT: AMOUNT + 1000]
-
     top_ids = top["id"].to_list()
-    sec_ids = sec["id"].to_list()
 
     deleted = []
 
@@ -53,11 +50,6 @@ def main():
         page = context.pages[0]
 
         for post_id in top_ids:
-            res = fetch_post(page, post_id)
-            if isinstance(res, dict) and res.get("error") == 404:
-                deleted.append(str(post_id))
-
-        for post_id in sec_ids:
             res = fetch_post(page, post_id)
             if isinstance(res, dict) and res.get("error") == 404:
                 deleted.append(str(post_id))
