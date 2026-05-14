@@ -23,11 +23,13 @@ def main():
     url_pattern = re.compile(r'^(https?://[^\s]+)(\s+https?://[^\s]+)*$')
     link_pattern = re.compile(r'https?://[^\s。，！？；：「」『』（）(),]+')
     sus_utm = {
-        "utm_source", "utm_medium", "utm_campaign", "utm_content",
-        "aff", "aff_id", "affiliate",
-        "ref", "referral", "partner", "coupon",
-        "promo", "tracking_id", "click_id",
-        "subid", "tag", "fbclid", "gclid",
+        "?utm_source", "?utm_medium", "?utm_campaign", "?utm_content",
+        "?aff", "?aff_id", "?affiliate",
+        "?ref", "?referral", "?referer", 
+        "?partner", "?partner_id", "?tag", 
+        "?coupon", "?code", "?invite", "?promo", 
+        "?tracking_id", "?click_id", "?campaign_id"
+        "?subid", "?sid", "?fbclid", "?gclid", "?igshid"
     }
 
     for post in data:
@@ -44,33 +46,39 @@ def main():
         item = {
             "id": post_id,
             "articleId": article_id,
-            "title": post.get("title"),
+            "title": post.get("title", ""),
             "edited": int(post.get("edited", False)),
-            "likeCount": int(post.get("likeCount")),
-            "collectionCount": int(post.get("collectionCount")),
-            "shareCount": int(post.get("shareCount")),
-            "forumName": post.get("forumName"),
+            "likeCount": int(post.get("likeCount", 0)),
+            "collectionCount": int(post.get("collectionCount", 0)),
+            "shareCount": int(post.get("shareCount", 0)),
+            "forumName": post.get("forumName", ""),
             "forumAlias": forum,
         }
 
         # 處理 createdAt 時間格式，轉換為台灣時間
-        created_at = str(post.get("createdAt"))
+        created_at = post.get("createdAt")
         if created_at:
+            created_at = str(created_at)
             utc_dt = datetime.fromisoformat(created_at.replace('Z', '+00:00'))
             tz_taiwan = timezone(timedelta(hours=8))
             local_dt = utc_dt.astimezone(tz_taiwan)
             item["createdAt"] = local_dt.strftime("%Y-%m-%d %H:%M:%S")
+        else:
+            item["createdAt"] = ""
 
         # 處理內文
         true_content = ""
         content_raw = post.get("content")
-        if content_raw == "" or url_pattern.match(content_raw.strip()):
+        if content_raw is None or content_raw == "":
+            print(f"找到沒有實質內文的文章，ID: {post_id}")
+            continue
+        elif url_pattern.match(content_raw.strip()):
             meta = post.get("meta", {})
-            if "annotation" in meta and meta["annotation"].strip():
+            if "annotation" in meta and meta["annotation"].strip() and not url_pattern.match(meta["annotation"].strip()):
                 true_content = meta["annotation"].strip()
                 item["content"] = true_content
             else:
-                print(f"找到沒有實質內文的文章，ID: {post_id}")
+                print(f"找到內文只有網址的文章，ID: {post_id}")
                 continue
         else:
             true_content = content_raw

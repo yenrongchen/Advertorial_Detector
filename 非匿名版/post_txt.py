@@ -34,9 +34,12 @@ def main():
         url_pattern = re.compile(r'^(https?://[^\s]+)(\s+https?://[^\s]+)*$')
         content_raw = post.get("content")
 
-        if url_pattern.match(content_raw.strip()):
+        if content_raw is None or content_raw == "":
+            print(f"找到沒有實質內文的文章，ID: {post_id}")
+            continue
+        elif url_pattern.match(content_raw.strip()):
             meta = post.get("meta", {})
-            if "annotation" in meta and meta["annotation"].strip():
+            if "annotation" in meta and meta["annotation"].strip() and not url_pattern.match(meta["annotation"].strip()):
                 true_content = meta["annotation"].strip()
             else:
                 print(f"找到內文只有網址的文章，ID: {post_id}")
