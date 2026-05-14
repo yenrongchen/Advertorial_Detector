@@ -23,13 +23,13 @@ def main():
     url_pattern = re.compile(r'^(https?://[^\s]+)(\s+https?://[^\s]+)*$')
     link_pattern = re.compile(r'https?://[^\s。，！？；：「」『』（）(),]+')
     sus_utm = {
-        "?utm_source", "?utm_medium", "?utm_campaign", "?utm_content",
-        "?aff", "?aff_id", "?affiliate",
-        "?ref", "?referral", "?referer", 
-        "?partner", "?partner_id", "?tag", 
-        "?coupon", "?code", "?invite", "?promo", 
-        "?tracking_id", "?click_id", "?campaign_id"
-        "?subid", "?sid", "?fbclid", "?gclid", "?igshid"
+        "utm_source=", "utm_medium=", "utm_campaign=", "utm_content=",
+        "aff=", "aff_id=", "affiliate=",
+        "ref=", "referral=", "referer=", 
+        "partner=", "partner_id=", "tag=", 
+        "coupon=", "code=", "invite=", "promo=", 
+        "tracking_id=", "click_id=", "campaign_id=", 
+        "subid=", "sid=", "fbclid=", "gclid=", "igshid=",
     }
 
     for post in data:
@@ -137,7 +137,7 @@ def main():
                 continue
             
             link_count += 1
-            if any(utm in url for utm in sus_utm):
+            if any(f"?{utm}" in url or f"&{utm}" in url for utm in sus_utm):
                 utm_link_count += 1
 
         item["linksCount"] = link_count
