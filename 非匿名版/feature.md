@@ -3,7 +3,7 @@
 ### 社交互動資訊
 * `edited`: 是否編輯過
 * `commentCount`: 直接回覆數量
-* `totalCommentCount`: 總回覆數量
+* `totalCommentCount`: 總回覆數量 (含子留言)
 * `likeCount`: 按讚數
 * `collectionCount`: 收藏數
 * `shareCount`: 分享數
@@ -13,7 +13,7 @@
 * `wordCount`: 文章字數
 * `lfFreq`: 換行符號密度
 * `linksCount`: 外部連結數量
-* `utmLinksCount`: UTM 連結數量
+* `utmLinksCount`: 帶有 UTM 參數的外部連結數量
 * `emojiCount`: Emoji 頻率
 * 特定標點符號頻率
 * 特定促購或商業意圖詞彙詞彙頻率 (ex. CTA 詞彙、折扣詞、推銷詞、推薦詞、營造急迫感詞彙)
@@ -24,39 +24,39 @@
 * `imageTextRatio`: 圖片文字比例 (每千字)
 * `videoTextRatio`: 影片文字比例 (每千字)
 * `mediaTextRatio`: 媒體文字比例 (每千字)
-* 情緒特徵 => 可多種
+* 情緒特徵
 
 
 ### 作者資訊
-* `authorUseNickname`: 發文者是否為匿名 (待定)
+* `authorUseNickname`: 發文者是否為匿名 (待定) (理論上非匿名版權都是 true)
 * `authorHasCreatorBadge`: 發文者是否有創作者勳章
 * `authorHasOfficialCreatorBadge`: 發文者是否有官方創作者勳章
-* `authorSuspicious`: 是不是可疑帳號 (isSuspiciousAccount)
+* `authorSuspicious`: 是不是可疑帳號
 
 
 ### 留言特徵
-* `authorReplyCount`: 作者回覆數量
-* `authorReplyLinkCount`: 作者回覆內的連結數量
-* `authorReplyUTMLinkCount`: 作者回覆內的 UTM 連結數量
-* `subcomDepth`: 平均子留言深度
-* `firstCommentTimeDiff`: 首留言時間差
-* `first30MinCommentRatio`: 前 30 分鐘留言佔總留言比例
+* `authorReplyCount`: 作者回覆數量 (含主留言及子留言)
+* `authorReplyLinkCount`: 作者回覆內的外部連結數量
+* `authorReplyUTMLinkCount`: 作者回覆內的帶有 UTM 參數的外部連結數量
+* `subcomDepth`: 平均子留言深度 (子留言數量 / 主留言數量)
+* `firstCommentTimeDiff`: 第一個主留言的時間和發文時間的時間差
+* `first30MinCommentRatio`: 前 30 分鐘內的主、子留言佔總留言比例
 * 留言情緒？
 
 
 ### 作者資訊及行為特徵
-* 歷史發文數
-* 歷史發文頻率
-* 近 30 天內的發文數占比
-* 時間內大量發文程度
-* 最大 24 小時內發文數
-* 發文間隔變異數
-* 上班時間發文比率
-* 周末發文比率
-* 旅遊版文章佔所有貼文的比例
-* 跨看板活躍度 (Cross-board Entropy) (要正規化)
-* 發文平均讚數
-* 文章模板相似度
+* `timeDiffDays`: 最早與最晚的貼文時間差 (天)
+* `postCount`: 歷史總發文數
+* `postFreq`: 歷史發文頻率 (篇/天)
+* `maxPostsPerDay`: 最大同天發文數
+* `maxPostsPer12h`: 最大 12 小時內發文數
+* `postIntervalStd`: 發文時間間隔標準差 (天)
+* `businessHourRatio`: 平日上班時間發文比率
+* `weekendRatio`: 周末發文比率
+* `travelPostRatio`: 旅遊版文章佔所有貼文的比例
+* `forumVariety`: 所有貼文的看板之分散程度
+* `forumEvenness`: 所有貼文的看板之分布均勻度
+* `avgLikes`: 貼文平均讚數
 
 
 ### 怎麼處理？
