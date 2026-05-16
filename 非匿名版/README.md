@@ -4,57 +4,39 @@
 非匿名版/
 ├── author.py                  ← 爬取作者所有貼文程式
 ├── author_info.py             ← 整理作者行為特徵程式
-├── author_posts.json          ← 作者所有貼文的原始資料
-├── check_exist.py             ← 檢查貼文存在狀況程式
 ├── comment.py                 ← 爬取文章留言程式
-├── comments_info.json         ← 文章留言資訊
+├── comment_info.py            ← 整理文章留言特徵程式
 ├── crawl.py                   ← 爬蟲主程式 (針對非匿名文章)
-├── crawled_ids_name.txt       ← 已爬取的文章 ID 紀錄
 ├── csv_info.py                ← 彙整文章所有資訊程式
-├── dcard_name.csv             ← 文章資訊彙整 (模型輸入資料)
-├── dcard_name_raw.json        ← 爬取的原始文章資料 (JSON 格式)
+├── Features.md                ← 文章特徵表
 ├── id_mapping_name.json       ← 文章原始 ID 與檔名 ID 的對照表
-├── post_to_csv.py             ← 整理資料程式
-├── processed_comment_ids.txt  ← 已處理留言的文章 ID 紀錄
-├── processed_uids.txt         ← 已處理作者的 UID 紀錄
+├── post_info.py               ← 整理文章基本特徵程式
+├── post_txt.py                ← 將文章存為文字檔程式
 ├── README.md                  ← 說明文件 (You are here)
+├── outputs/                   
+│   ├── data.csv               ← 整合後的特徵資料 (模型輸入資料)
+│   └── dcard_name.csv         ← 文章資訊彙整
 ├── posts/                     ← 存放文章文字檔的資料夾
-    ├── 1.txt
-    ├── 2.txt
-    └── ... (更多 txt 檔案)
+├── raw_data/                  ← 存放爬取的原始資料
+└── record/                    ← 存放爬取進度與相關 ID 紀錄的資料夾
 ```
 
 <br>
 
 ## CSV 欄位解釋
 
+### `dcard_name.csv`
+
 | 欄位名稱 | 說明 |
 | :--- | :--- |
 | `id` | Dcard 原始文章 ID |
 | `articleId` | `posts/` 資料夾下的檔名 ID |
 | `title` | 文章標題 |
-| `edited` | 是否編輯過 |
-| `commentCount` | 直接回覆數量 |
-| `totalCommentCount` | 總回覆數量 (含樓中樓) |
-| `likeCount` | 按讚數 |
-| `collectionCount` | 收藏數 |
-| `shareCount` | 分享數 |
-| `forumName` | 看板名稱 |
-| `forumAlias` | 看板英文代號 |
-| `linksCount` | 文章內連結數量 |
-| `authorUseNickname` | 發文者是否為匿名 |
 | `content` | 文章內文 |
 | `createdAt` | 發表時間 |
-| `withImages` | 是否包含圖片 |
-| `withVideos` | 是否包含影片 |
-| `imageCount` | 圖片數量 |
-| `videoCount` | 影片數量 |
-| `authorName` | 發文者名稱 |
-| `authorSubtitle` | 發文者校系或身分說明 |
-| `authorHasCreatorBadge` | 發文者是否有創作者勳章 |
-| `authorHasOfficialCreatorBadge` | 發文者是否有官方創作者勳章 |
 
-#### 註：`edited`、`authorUseNickname`、`withImages`、`withVideos`、`authorHasCreatorBadge`、`authorHasOfficialCreatorBadge` 六個欄位原為布林值，CSV 檔中已被轉換為整數，1 代表 True，0 代表 False
+### `data.csv`
+請見 [Features.md](Features.md)
 
 <br>
 

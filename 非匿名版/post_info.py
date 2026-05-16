@@ -32,6 +32,13 @@ def main():
         "subid=", "sid=", "fbclid=", "gclid=", "igshid=",
     }
 
+    extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
+    dcard_domains = [
+        'megapx-assets.dcard.tw',
+        'sticker-assets.dcard.tw',
+        'megapx.dcard.tw'
+    ]
+
     for post in data:
         post_id = post.get("id")
         forum = post.get("forumAlias")
@@ -119,13 +126,6 @@ def main():
         link_count = 0
         utm_link_count = 0
         all_urls = link_pattern.findall(true_content)
-
-        extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp']
-        dcard_domains = [
-            'megapx-assets.dcard.tw',
-            'sticker-assets.dcard.tw',
-            'megapx.dcard.tw'
-        ]
 
         for url in all_urls:
             if any(domain in url for domain in dcard_domains):
